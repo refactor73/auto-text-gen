@@ -22,7 +22,7 @@ class TextComposerTest extends TestCase
         ]);
 
         $decisionTable = DecisionTable::fromArray([
-            'isPositive' => true,
+            'isNegative' => false,
         ]);
 
         $textComposer = new TextComposer($decisionTable, $context);
