@@ -1,9 +1,9 @@
 {
   "name": "refactor73/autotextgen",
-  "description": "Automatic Text Generation",
+  "description": "A simple document driven text generation written in PHP",
   "type": "project",
   "homepage": "https://gitlab.com/crisk/autotextgen",
-  "license": "BSD-3-Clause",
+  "license": "MIT License",
   "config": {
     "sort-packages": true
   },
