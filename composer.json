@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "library",
   "homepage": "https://gitlab.com/crisk/autotextgen",
-  "license": "MIT License",
+  "license": "MIT",
   "readme": "README.md",
   "config": {
     "sort-packages": true
