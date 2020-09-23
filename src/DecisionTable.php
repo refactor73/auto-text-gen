@@ -29,8 +29,11 @@ class DecisionTable
         return true;
     }
 
-    private function isTrue(string $name): bool
+    public function isTrue(string $name): bool
     {
-        return ($this->decisions[str_replace('$', '', $name)] ?? false) === true;
+        $isNegation = $name[0] === '!';
+        $decision = ($this->decisions[preg_replace('/[!$]/', '', $name)] ?? false);
+
+        return $decision === !$isNegation;
     }
 }

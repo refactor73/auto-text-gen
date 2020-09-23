@@ -17,6 +17,8 @@ class TextComposer
 
     private VariableResolver $variableResolver;
 
+    private DecisionTable $decisionTable;
+
     /**
      * TextComposer constructor.
      * @param DecisionTable $decisionTable
@@ -27,6 +29,7 @@ class TextComposer
         $this->conditionResolver = new ConditionResolver($decisionTable, $context);
         $this->synonymSpinner = new SynonymSpinner();
         $this->variableResolver = new VariableResolver($context);
+        $this->decisionTable = $decisionTable;
     }
 
     /**
@@ -41,5 +44,13 @@ class TextComposer
         $pattern = ($this->synonymSpinner)($pattern);
 
         return preg_replace('/[ ]{2,}/', ' ', $pattern);
+    }
+
+    /**
+     * @return DecisionTable
+     */
+    public function decisionTable(): DecisionTable
+    {
+        return $this->decisionTable;
     }
 }

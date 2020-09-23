@@ -137,4 +137,24 @@ class ConditionResolverTest extends TestCase
             $result
         );
     }
+
+    public function testNegationCondition(): void
+    {
+        $pattern = 'Der Wert ist [IF !$decision] gestiegen [ELSE] gefallen [ENDIF]';
+
+        $context = new Context([]);
+
+        $decisionTable = new DecisionTable([
+            'decision' => false,
+        ]);
+
+        $resolver = new ConditionResolver($decisionTable, $context);
+
+        $result = $resolver($pattern);
+
+        self::assertSame(
+            'Der Wert ist gestiegen',
+            $result
+        );
+    }
 }
