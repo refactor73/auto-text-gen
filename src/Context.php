@@ -22,4 +22,9 @@ class Context
     {
         return (string)($this->variables[$variable] ?? '');
     }
+
+    public function add(string $variable, string $value): void
+    {
+        $this->variables[$variable] = $value;
+    }
 }
